@@ -1,8 +1,10 @@
 import pygame
 import os
 
+os.environ["SDL_AUDIODRIVER"] = "directsound"
 pygame.font.init() # Initialice the  font library 
 pygame.mixer.init() # Initialice the sound library 
+pygame.mixer.init(frequency=44100, size=-16, channels=2, buffer=4096, allowedchanges=pygame.AUDIO_ALLOW_ANY_CHANGE)
 
 WIDTH, HEIGHT = 900, 500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
